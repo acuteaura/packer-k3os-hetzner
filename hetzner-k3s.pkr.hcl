@@ -36,6 +36,6 @@ build {
   }
 
   provisioner "shell" {
-    inline = ["wget -O /tmp/install.sh \"${local.install_url}\"", "bash /tmp/install.sh --config /tmp/config.yaml /dev/sda \"${local.iso_url}\""]
+    inline = ["wget -O /tmp/install.sh \"${local.install_url}\"", "apt-get install -y grub-pc-bin", "bash /tmp/install.sh --config /tmp/config.yaml /dev/sda \"${local.iso_url}\""]
   }
 }
